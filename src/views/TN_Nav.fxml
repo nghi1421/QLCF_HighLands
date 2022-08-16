@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1317.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TN_Nav_Controller">
+   <left>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <VBox prefHeight="558.0" prefWidth="295.0" spacing="10.0" style="-fx-background-color: #00306A;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="74.0" prefWidth="298.0" styleClass="title-color-toright" stylesheets="@../styling/NhanVien.css" text="Highlands" textFill="#468ceb" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="298.0" styleClass="title-color-toleft" stylesheets="@../styling/NhanVien.css" text="Coffee" textFill="#468ceb">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="40.0" />
+                     </padding>
+                  </Label>
+                  <JFXButton fx:id="btnGoiMon" alignment="TOP_LEFT" focusTraversable="false" onMouseClicked="#loadViewGoiMon" prefHeight="26.0" prefWidth="298.0" ripplerFill="#5e91ff" stylesheets="@../styling/ChonNav.css" text="Gọi món" textFill="WHITE" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView blendMode="LIGHTEN" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                           <image>
+                              <Image url="@../image/TN/icons8_order_history_100px_1.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnKhachHang" alignment="TOP_LEFT" focusTraversable="false" layoutX="10.0" layoutY="326.0" onMouseClicked="#loadViewKhachHang" prefHeight="26.0" prefWidth="298.0" ripplerFill="#5e91ff" stylesheets="@../styling/ChonNav.css" text="Khách hàng" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView blendMode="LIGHTEN" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                           <image>
+                              <Image url="@../image/QL/icons8_management_64px.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnOrder" alignment="TOP_LEFT" focusTraversable="false" layoutX="10.0" layoutY="449.0" onMouseClicked="#loadViewOrder" prefHeight="26.0" prefWidth="298.0" ripplerFill="#5e91ff" stylesheets="@../styling/ChonNav.css" text="Order" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView blendMode="LIGHTEN" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                           <image>
+                              <Image url="@../image/TN/icons8_document_80px.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="30.0" prefWidth="258.0" style="-fx-background-color: #00306A;">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/TN/icons8_user_100px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="lbHoTenNV" prefHeight="38.0" prefWidth="219.0" text="Username" textFill="WHITE">
+                           <font>
+                              <Font name="Serif Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" style="-fx-background-color: #00306A;">
+                     <children>
+                        <JFXButton focusTraversable="false" onMouseClicked="#dangXuat" prefHeight="28.0" prefWidth="148.0" style="-fx-border-color: #fff; -fx-border-width: 2 1 0 0;" text="Đăng xuất" textFill="WHITE">
+                           <font>
+                              <Font name="Serif Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/TN/icons8_Logout_48px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDoiMatKhau" focusTraversable="false" layoutX="10.0" layoutY="10.0" onMouseClicked="#doiMatKhau" prefHeight="26.0" prefWidth="139.0" style="-fx-border-color: #fff; -fx-border-width: 2 0 0 0;" text="Đổi mật khẩu" textFill="WHITE">
+                           <font>
+                              <Font name="Serif Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/TN/icons8_change_100px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </left>
+   <center>
+      <Pane prefHeight="740.0" prefWidth="874.0" style="-fx-background-size: 100% 100%; -fx-background-image: url('file:C:/Users/Nghi/eclipse-workspace/QLCF/src/image/lmao.jpg');" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

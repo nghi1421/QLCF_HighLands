@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" stylesheets="@../styling/styleForModelView.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.queueItemController">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1038.0" spacing="20.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-width: 5; -fx-border-radius: 5 5 5 5;">
+         <children>
+            <Label fx:id="lbStt" text="1">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox prefWidth="3.0" style="-fx-background-color: #333; -fx-border-color: #fff; -fx-border-radius: 20;" />
+            <Label fx:id="lbTenDoUong" text="Tên đồ uống">
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox layoutX="64.0" layoutY="15.0" prefWidth="3.0" style="-fx-background-color: #333; -fx-border-color: #fff; -fx-border-radius: 20;" />
+            <ImageView fx:id="imgDrink" fitHeight="69.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/QL/download.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="187.0" layoutY="15.0" prefWidth="3.0" style="-fx-background-color: #333; -fx-border-color: #fff; -fx-border-radius: 20;" />
+            <Label text="Số lượng">
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbSoLuong" text="5">
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="-15.0" />
+               </HBox.margin>
+            </Label>
+            <HBox layoutX="300.0" layoutY="15.0" prefWidth="3.0" style="-fx-background-color: #333; -fx-border-color: #fff; -fx-border-radius: 20;" />
+            <Label layoutX="323.0" layoutY="36.0" prefHeight="18.0" prefWidth="78.0" text="Ghi chú">
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="txtaGhichu" editable="false" focusColor="#0040ff" prefHeight="61.0" prefWidth="365.0" unFocusColor="#3700ff">
+               <HBox.margin>
+                  <Insets left="-30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+            </JFXTextArea>
+            <JFXButton fx:id="btnTraMon" onMouseClicked="#click" prefHeight="42.0" prefWidth="123.0" ripplerFill="#bfbfbf" style="-fx-background-color: #242631;" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Trả món" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8_Done_52px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="fruit-item" />
+   </styleClass>
+</AnchorPane>

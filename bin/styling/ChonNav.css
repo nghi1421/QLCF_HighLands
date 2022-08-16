@@ -1,0 +1,10 @@
+.chon{
+	-fx-background-color :  #001023;
+	-fx-border-color :  #fff;
+	-fx-border-width:  0 0 0 5;
+}
+
+.button:hover{
+	-fx-background-color : #55759B;
+
+}

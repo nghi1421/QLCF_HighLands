@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="820.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TN_GoiMon_Controller">
+   <children>
+      <AnchorPane minWidth="0.0">
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <VBox prefHeight="826.0" prefWidth="483.0" style="-fx-background-color: #FFA200; -fx-border-color: #000; -fx-border-width: 2;" stylesheets="@../styling/styleForModelView.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: #000; -fx-background-color: #fff; -fx-border-width: 2;" styleClass="shadow" stylesheets="@../styling/styleForModelView.css">
+                           <children>
+                              <Label text="Giỏ hàng" textFill="#00306a">
+                                 <font>
+                                    <Font name="Cambria Bold" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="388.0" />
+                        <VBox fx:id="chosenCard" alignment="CENTER" prefHeight="757.0" prefWidth="443.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;" stylesheets="@../styling/styleForModelView.css">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <VBox style="-fx-background-color: #fff; -fx-background-radius: 20;" styleClass="table">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <ImageView fx:id="imgTBHoTen" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" />
+                                                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="646.0" stylesheets="@../styling/styleForModelView.css">
+                                                   <children>
+                                                      <TextField fx:id="txtTimKiemKH" focusTraversable="false" onMouseClicked="#hienDSKH" prefHeight="40.0" prefWidth="350.0" promptText="Tìm kiếm khách hàng" styleClass="transparent" stylesheets="@../styling/styleForModelView.css">
+                                                         <font>
+                                                            <Font name="Cambria" size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/QL/icons8_search_100px_1.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="search-box" />
+                                                      <String fx:value="table" />
+                                                   </styleClass>
+                                                </HBox>
+                                                <JFXButton focusTraversable="false" onMouseClicked="#boTimKiem" prefHeight="38.0" prefWidth="44.0" text=" ">
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/TN/icons8_Close_48px.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <HBox.margin>
+                                                      <Insets right="-20.0" />
+                                                   </HBox.margin>
+                                                </JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="34.0" prefWidth="402.0">
+                                             <children>
+                                                <Label prefHeight="28.0" prefWidth="141.0" styleClass="shadow" text="Họ tên khách hàng">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="tenKH" prefHeight="28.0" prefWidth="206.0">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox prefHeight="30.0" prefWidth="402.0">
+                                             <children>
+                                                <Label prefHeight="28.0" prefWidth="101.0" styleClass="shadow" text="Số điện thoại">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="sdtKH" prefHeight="28.0" prefWidth="236.0">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <TableView fx:id="tbOrders" focusTraversable="false" prefHeight="486.0" prefWidth="434.0" styleClass="table" stylesheets="@../styling/tableView.css">
+                                 <columns>
+                                    <TableColumn fx:id="cImg" prefWidth="121.60000544786453" style="-fx-text-alignment: center; -fx-alignment: center;" text="Hình ảnh" />
+                                    <TableColumn fx:id="cTenDoUong" prefWidth="99.20001220703125" style="-fx-text-alignment: center; -fx-alignment: center;" text="Tên đồ uống" />
+                                    <TableColumn fx:id="cSoLuong" prefWidth="73.60000610351562" style="-fx-text-alignment: center; -fx-alignment: center;" text="Số lượng" />
+                                    <TableColumn fx:id="cDonGia" prefWidth="67.20001220703125" style="-fx-text-alignment: center; -fx-alignment: center;" text="Đơn giá" />
+                                    <TableColumn fx:id="cTru" editable="false" prefWidth="71.199951171875" style="-fx-text-alignment: center; -fx-alignment: center;" text="___" />
+                                 </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <VBox style="-fx-background-color: #fff; -fx-background-radius: 20;">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="43.0" prefWidth="288.0" spacing="20.0">
+                                       <children>
+                                          <JFXButton onMouseClicked="#lapVaThanhToan" prefHeight="46.0" prefWidth="218.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Lưu order &amp; Thanh toán" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/QL/icons8_save_60px_2.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Cambria Bold" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton layoutX="120.0" layoutY="10.0" onMouseClicked="#lamTrong" prefHeight="46.0" prefWidth="172.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Làm mới giỏ hàng" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/QL/refresh_64px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Cambria Bold" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER" prefHeight="0.0" prefWidth="262.0" />
+                           </children>
+                        </VBox>
+                        <HBox prefHeight="53.0" prefWidth="483.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <styleClass>
+                        <String fx:value="right-bar" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </VBox>
+               </left>
+               <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FFA200; -fx-border-color: #000; -fx-border-width: 2 2 2 0;" stylesheets="@../styling/styleForModelView.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="645.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label fx:id="lbTieuDe" prefHeight="50.0" prefWidth="568.0" styleClass="shadow" text="Danh sách đồ uống" textFill="#00306a">
+                                 <font>
+                                    <Font name="Cambria Bold" size="40.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 0 2;">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <StackPane>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <VBox style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox style="-fx-border-color: #000; -fx-border-width: 2 2 0 2;">
+                                             <children>
+                                                <JFXButton onMouseClicked="#lamMoi" prefHeight="47.0" prefWidth="145.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Làm mới" textFill="WHITE">
+                                                   <graphic>
+                                                      <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/QL/refresh_64px.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <font>
+                                                      <Font name="Cambria Bold" size="18.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <ScrollPane fx:id="scrollDrinkView" prefHeight="700.0" prefWidth="948.0" style="-fx-border-color: #000; -fx-border-width: 0 2 2 2;" stylesheets="@../styling/styleForModelView.css">
+                                             <content>
+                                                <GridPane fx:id="gridView" alignment="TOP_CENTER" prefHeight="714.0" prefWidth="630.0" styleClass="table" stylesheets="@../styling/NhanVien.css">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <padding>
+                                                      <Insets bottom="59.0" />
+                                                   </padding>
+                                                </GridPane>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="vbKhachHang" prefHeight="200.0" prefWidth="100.0" visible="false">
+                                       <children>
+                                          <TableView fx:id="tbKhachHang" onMouseClicked="#loadSelectedKhachHang" prefHeight="725.0" prefWidth="646.0" style="-fx-font-family: cambria; -fx-font-size: 16px;" styleClass="table" stylesheets="@../styling/tableView.css">
+                                             <columns>
+                                                <TableColumn fx:id="cMaKH" editable="false" prefWidth="75.0" style="-fx-alignment: center-left; -fx-font-size: 16px;" text="Mã khách hàng" />
+                                                <TableColumn fx:id="cHoTenKH" editable="false" prefWidth="75.0" style="-fx-alignment: center-left; -fx-font-size: 16px;" text="Họ và tên" />
+                                                <TableColumn fx:id="cSDT" editable="false" prefWidth="75.0" style="-fx-alignment: center-left; -fx-font-size: 16px;" text="Số điện thoại" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

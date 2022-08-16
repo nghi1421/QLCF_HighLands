@@ -1,0 +1,40 @@
+.jfx-text-field {
+    -fx-border-radius: 20.0px;
+    -fx-background-radius: 20.0;
+    -fx-border-color: #879095;
+}
+
+.error{
+	-fx-focus-color: #d35244;
+    -fx-text-box-border: red ;
+  	-fx-focus-color: red ;
+  	 -fx-border-color: RED;
+    -fx-background-color: #FFF0F0;
+    -fx-background-radius:20;
+}
+
+.tooltipError{
+    -fx-border-color:#F02849;
+    -fx-base: #000;
+	-fx-text-fill: #F02849;
+	-fx-show-delay: 150ms;
+	-fx-background-color: white;
+	-fx-background-radius: 20;
+	-fx-border-radius: 20;
+}
+
+.table{
+	-fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.7), 15, 0.5, 3, 3);
+}
+
+.textfield-phieu-nhap{
+	-fx-border-color: #00306a;
+}
+
+.error1{
+	-fx-focus-color: #d35244;
+    -fx-text-box-border: red ;
+  	-fx-focus-color: red ;
+  	 -fx-border-color: RED;
+    -fx-background-color: #FFF0F0;
+}

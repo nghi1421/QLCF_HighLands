@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@../styling/NhanVien.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.QL_DoUong_CT_Controller">
+   <center>
+      <VBox fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="771.0" style="-fx-background-color: #FFA200; -fx-border-color: #000; -fx-border-width: 3;" styleClass="backgroundColor" stylesheets="@../styling/NhanVien.css">
+         <children>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;">
+               <children>
+                  <Text fill="#00306a" strokeType="OUTSIDE" strokeWidth="0.0" text="Đồ Uống" wrappingWidth="503.92508912086487">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="48.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="-79.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#anLv" prefHeight="46.0" prefWidth="600.0" style="-fx-border-color: #000; -fx-border-width: 2 2 0 2; -fx-background-color: #fff;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="103.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Mã đồ uống:">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="txtMaDU" layoutX="32.0" layoutY="19.0" prefHeight="28.0" prefWidth="151.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Mã đồ uống tự sinh">
+                     <font>
+                        <Font name="Cambria Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="28.0" prefWidth="70.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Giá bán:">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtGiaBan" alignment="CENTER_RIGHT" focusTraversable="false" onKeyTyped="#kiemTraGiaBan" onMouseClicked="#anLv" prefHeight="31.0" prefWidth="274.0" promptText="Giá bán" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="jfx-text-field" />
+                        <String fx:value="table" />
+                     </styleClass>
+                  </TextField>
+                  <ImageView fx:id="imgTBGiaBan" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#anLv" prefHeight="46.0" prefWidth="600.0" style="-fx-border-color: #000; -fx-border-width: 0 2 0 2; -fx-background-color: #fff;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="114.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Tên đồ uống: ">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtTenDU" focusTraversable="false" onKeyTyped="#kiemTraTenDoUong" onMouseClicked="#anLv" prefHeight="31.0" prefWidth="231.0" promptText="Tên đồ uống" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="jfx-text-field" />
+                        <String fx:value="table" />
+                     </styleClass>
+                  </TextField>
+                  <Label>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ImageView fx:id="imgTBTenDU" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label prefHeight="26.0" prefWidth="142.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Khuyến mãi">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="-10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox prefHeight="44.0" prefWidth="255.0">
+                     <children>
+                        <HBox prefHeight="58.0" prefWidth="189.0">
+                           <children>
+                              <Label alignment="BOTTOM_LEFT" prefHeight="34.0" prefWidth="122.0" text="Thêm khuyến mãi mới">
+                                 <font>
+                                    <Font name="Cambria Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <JFXToggleButton fx:id="tbThem" prefHeight="46.0" prefWidth="74.0" text=" ">
+                                 <HBox.margin>
+                                    <Insets left="-21.0" right="-40.0" top="-5.0" />
+                                 </HBox.margin>
+                              </JFXToggleButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="-25.0" left="60.0" top="-20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="27.0" prefWidth="242.0">
+                           <children>
+                              <TextField fx:id="txtNhapSearch" focusTraversable="false" onKeyTyped="#search" onMouseClicked="#hienLv" prefHeight="27.0" prefWidth="186.0" promptText="Nhập khuyến mãi" styleClass="textfield-phieu-nhap" stylesheets="@../styling/nhanvienCSS.css" />
+                              <ImageView fx:id="imgTBKM" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="702.0" style="-fx-border-color: #000; -fx-border-width: 0 2 0 2; -fx-background-color: #fff;">
+               <children>
+                  <Label>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="339.0" prefWidth="762.0" style="-fx-border-color: #000; -fx-border-width: 0 2 0 2; -fx-background-color: #fff;">
+               <children>
+                  <JFXButton fx:id="btnChonAnh" focusTraversable="false" prefHeight="220.0" prefWidth="164.0" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css" text=" ">
+                     <graphic>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <AnchorPane prefHeight="180.0" prefWidth="150.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <ImageView fx:id="imgAnh" fitHeight="180.0" fitWidth="147.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="28.0" prefWidth="130.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Hình ảnh">
+                                       <font>
+                                          <Font name="Cambria Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </graphic>
+                  </JFXButton>
+                  <Label>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox alignment="TOP_CENTER" prefHeight="337.0" prefWidth="134.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="301.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Nguyên liệu">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tbNguyenLieu" prefHeight="282.0" prefWidth="221.0" styleClass="table" stylesheets="@../styling/tableView.css">
+                           <columns>
+                              <TableColumn fx:id="cTenNguyenLieu" prefWidth="200.79992371797562" text="Tên nguyên liệu" />
+                              <TableColumn fx:id="cDonVi" prefWidth="200.79992371797562" text="Đơn vị" visible="false" />
+                              <TableColumn fx:id="cMaNL" prefWidth="200.79992371797562" text="Đơn vị" visible="false" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="337.0" prefWidth="69.0" spacing="20.0">
+                     <children>
+                        <JFXButton focusTraversable="false" onMouseClicked="#themCTPC" prefHeight="30.0" prefWidth="51.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="&gt;&gt;" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" focusTraversable="false" onMouseClicked="#truCTPC" prefHeight="30.0" prefWidth="52.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="&lt;&lt;" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="337.0" prefWidth="301.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="301.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Công thức pha chế">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <TableView fx:id="tbCongThuc" editable="true" prefHeight="285.0" prefWidth="272.0" styleClass="table" stylesheets="@../styling/tableView.css">
+                          <columns>
+                            <TableColumn fx:id="cTenNL" editable="false" prefWidth="75.0" text="Tên nguyên liệu" />
+                            <TableColumn fx:id="cDinhLuong" prefWidth="75.0" text="Định lượng" />
+                              <TableColumn fx:id="cMaNL2" prefWidth="75.0" text="Định lượng" visible="false" />
+                              <TableColumn fx:id="cDonVi1" editable="false" prefWidth="75.0" text="Đơn vị" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-border-color: #000; -fx-border-width: 0 2 2 2; -fx-background-color: #fff;">
+               <children>
+                  <JFXButton fx:id="btnLuuThongTin" focusTraversable="false" onMouseClicked="#luuDoUong" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Lưu thông tin" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/QL/icons8_save_60px_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnTroVe" focusTraversable="false" layoutX="20.0" layoutY="20.0" onMouseClicked="#troVe" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Trở về" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/QL/icons8_return_64px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   <right>
+      <AnchorPane fx:id="apGiamGia" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="lvGiamGia" depthTest="ENABLE" focusTraversable="false" layoutX="-670.0" layoutY="318.0" onMouseClicked="#chonGiamGia" prefHeight="200.0" prefWidth="186.0" visible="false" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </AnchorPane>
+   </right>
+</BorderPane>

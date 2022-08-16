@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#click" prefHeight="199.0" prefWidth="199.0" stylesheets="@../styling/styleForModelView.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.itemController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="68.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../styling/styleForModelView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label fx:id="lbName" alignment="CENTER" prefHeight="30.0" prefWidth="191.0" text="Cafe">
+                     <font>
+                        <Font name="Cambria" size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <Label fx:id="lbPrice" alignment="CENTER" prefHeight="22.0" prefWidth="190.0" text="50.000VND">
+                           <font>
+                              <Font name="Cambria Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="-5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <ImageView fx:id="imgDrink" fitHeight="178.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/QL/download.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="187.0">
+               <VBox.margin>
+                  <Insets left="4.0" top="-35.0" />
+               </VBox.margin>
+               <children>
+                  <Label fx:id="lbSLCon" text="523">
+                     <font>
+                        <Font name="Franklin Gothic Book Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/QL/coffee_to_go_48px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <styleClass>
+            <String fx:value="fruit-item" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </VBox>
+      <Label fx:id="lbGiamGia" layoutX="122.0" layoutY="150.0" prefHeight="54.0" prefWidth="86.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+   <styleClass>
+      <String fx:value="hover_pane" />
+      <String fx:value="shadow" />
+      <String fx:value="fruit-item" />
+   </styleClass>
+</AnchorPane>

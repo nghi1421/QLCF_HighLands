@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1150.0" style="-fx-border-color: #000; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.B_NhapHang_Controller">
+   <children>
+      <VBox layoutX="136.0" layoutY="112.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FFA200;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="78.0" prefWidth="1146.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="79.0" prefWidth="1147.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;" text="Nhập hàng" textFill="#00306a">
+                     <font>
+                        <Font name="Cambria Bold" size="36.0" />
+                     </font>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="718.0" prefWidth="1146.0">
+               <children>
+                  <VBox fx:id="vbBangPN" prefHeight="713.0" prefWidth="559.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="551.0" spacing="10.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="42.0" prefWidth="258.0" stylesheets="@../styling/styleForModelView.css">
+                                 <children>
+                                    <TextField fx:id="txtTimKiem" focusTraversable="false" prefHeight="35.0" prefWidth="343.0" promptText="Tìm kiếm" styleClass="transparent" stylesheets="@../styling/styleForModelView.css">
+                                       <font>
+                                          <Font name="Cambria" size="18.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="search-box" />
+                                    <String fx:value="table" />
+                                 </styleClass>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <JFXButton focusTraversable="false" onMouseClicked="#lamMoiPhieuNhap" prefHeight="39.0" prefWidth="118.0" ripplerFill="#bfbfbf" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Làm mới" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold Italic" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/QL/refresh_64px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnLapPhieu" focusTraversable="false" layoutX="414.0" layoutY="22.0" onMouseClicked="#lapPhieu" prefHeight="38.0" prefWidth="125.0" ripplerFill="#bfbfbf" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Lập phiếu" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold Italic" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/QL/add_64px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="639.0" prefWidth="569.0">
+                           <children>
+                              <TableView fx:id="tbPN" focusTraversable="false" onMouseClicked="#layCTPN" prefHeight="638.0" prefWidth="631.0" style="-fx-font-family: cambria; -fx-font-size: 16px;" styleClass="table" stylesheets="@../styling/tableView.css">
+                                <columns>
+                                  <TableColumn fx:id="cMaPN" prefWidth="92.80001246929169" style="-fx-alignment: center-left; -fx-font-size: 14px;" text="Mã nhập hàng" />
+                                    <TableColumn fx:id="cTrangThai" prefWidth="92.80001246929169" style="-fx-alignment: center-left; -fx-font-size: 14px;" text="Trạng thái" />
+                                  <TableColumn fx:id="cTenNV" prefWidth="117.60005187988281" style="-fx-alignment: center-left; -fx-font-size: 14px;" text="Tên nhân viên lập" />
+                                    <TableColumn fx:id="cThoiGian" prefWidth="117.60005187988281" style="-fx-alignment: center-left; -fx-font-size: 14px;" text="Thời gian lập" />
+                                    <TableColumn fx:id="cTenNCC" prefWidth="117.60005187988281" style="-fx-alignment: center-left; -fx-font-size: 14px;" text="Tên nhà cung cấp" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vbCTPN" prefHeight="713.0" prefWidth="562.0" style="-fx-background-color: #fff;">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <HBox prefHeight="82.0" prefWidth="533.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;">
+                           <children>
+                              <Label contentDisplay="CENTER" prefHeight="79.0" prefWidth="1147.0" text="Chi tiết phiếu nhập" textFill="#00306a">
+                                 <font>
+                                    <Font name="Cambria Bold" size="36.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="635.0" prefWidth="533.0" style="-fx-border-color: #000; -fx-border-width: 2;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="600.0" stylesheets="@../styling/NhanVien.css">
+                                 <children>
+                                    <Label prefHeight="28.0" prefWidth="142.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Mã phiếu nhập">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbMaPN" layoutX="30.0" layoutY="13.0" prefHeight="28.0" prefWidth="181.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Mã phiếu nhập tự sinh">
+                                       <font>
+                                          <Font name="Cambria Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="cbXacNhan" disable="true" focusTraversable="false" mnemonicParsing="false" text="Xác nhận">
+                                       <font>
+                                          <Font name="Cambria" size="18.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefHeight="28.0" prefWidth="226.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Tên nhân viên lập phiếu">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label>
+                                       <tooltip>
+                                          <Tooltip fx:id="ttTenNL" text="Chưa nhập tên nguyên liệu" />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="lbTenNV" prefHeight="28.0" prefWidth="260.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css">
+                                       <font>
+                                          <Font name="Cambria Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="59.0" prefHeight="46.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefHeight="28.0" prefWidth="121.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Nhà cung cấp">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label>
+                                       <tooltip>
+                                          <Tooltip fx:id="ttTenNL1" text="Chưa nhập tên nguyên liệu" />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtNhapSearch" focusTraversable="false" onKeyTyped="#search" onMouseClicked="#hienLv" prefHeight="38.0" prefWidth="230.0" promptText="Nhập tên nhà cung cấp" styleClass="textfield-phieu-nhap" stylesheets="@../styling/nhanvienCSS.css" />
+                                    <ImageView fx:id="imgTBNCC" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets left="25.0" right="5.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="59.0" prefHeight="46.0" prefWidth="600.0">
+                                 <children>
+                                    <Label prefHeight="28.0" prefWidth="191.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css" text="Thời gian lặp phiếu">
+                                       <font>
+                                          <Font name="Cambria Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label>
+                                       <tooltip>
+                                          <Tooltip fx:id="ttTenNL2" text="Chưa nhập tên nguyên liệu" />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="lbThoiGian" prefHeight="28.0" prefWidth="260.0" styleClass="shadow" stylesheets="@../styling/styleForModelView.css">
+                                       <font>
+                                          <Font name="Cambria Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="361.0" prefWidth="528.0" style="-fx-border-color: #000; -fx-border-width: 0 0 2 0;">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <TableView fx:id="tbNguyenLieu" focusTraversable="false" prefHeight="339.0" prefWidth="130.0" style="-fx-font-family: cambria; -fx-font-size: 16px;" styleClass="table" stylesheets="@../styling/tableView.css">
+                                       <columns>
+                                          <TableColumn fx:id="cTenNguyenLieu" prefWidth="200.79992371797562" style="-fx-font-size: 14px; -fx-alignment: center-left;" text="Tên nguyên liệu" />
+                                          <TableColumn fx:id="cDonVi" prefWidth="200.79992371797562" style="-fx-font-size: 14px; -fx-alignment: center-left;" text="Đơn vị" visible="false" />
+                                          <TableColumn fx:id="cMaNL" prefWidth="200.79992371797562" text="Đơn vị" visible="false" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <VBox fx:id="vbThemBot" alignment="CENTER" prefHeight="310.0" prefWidth="62.0" spacing="20.0">
+                                       <children>
+                                          <JFXButton fx:id="btnThem" focusTraversable="false" onMouseClicked="#themCTPC" prefHeight="30.0" prefWidth="51.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="&gt;&gt;" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btnBot" alignment="CENTER" focusTraversable="false" onMouseClicked="#truCTPC" prefHeight="30.0" prefWidth="52.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="&lt;&lt;" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <TableView fx:id="tbCTPN" editable="true" focusTraversable="false" prefHeight="339.0" prefWidth="355.0" style="-fx-font-family: cambria; -fx-font-size: 16px;" styleClass="table" stylesheets="@../styling/tableView.css">
+                                       <columns>
+                                          <TableColumn fx:id="cTenNL" editable="false" prefWidth="117.59997868537903" style="-fx-font-size: 14px; -fx-alignment: center-left;" text="Tên nguyên liệu" />
+                                          <TableColumn fx:id="cSoLuong" prefWidth="70.39996337890625" style="-fx-alignment: center-right; -fx-font-size: 16px;" text="Số lượng" />
+                                          <TableColumn fx:id="cDonVi2" prefWidth="60.800048828125" text="Đơn vị" />
+                                          <TableColumn fx:id="cMaNL2" prefWidth="60.800048828125" text="Mã Nl" visible="false" />
+                                          <TableColumn fx:id="cDonGia" prefWidth="87.19976806640625" style="-fx-alignment: center-right; -fx-font-size: 16px;" text="Đơn giá" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="hbNut" alignment="CENTER" prefHeight="86.0" prefWidth="528.0" spacing="20.0" style="-fx-border-color: #000; -fx-border-width: 2 0 0 0;">
+                                 <children>
+                                    <JFXButton fx:id="btnLuu" focusTraversable="false" onMouseClicked="#luuPhieuNhap" prefHeight="60.0" prefWidth="222.0" ripplerFill="WHITE" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Lưu thông tin" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="24.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/QL/icons8_save_60px_2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnXoa" focusTraversable="false" onMouseClicked="#XoaPN" prefHeight="60.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Xóa" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="24.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/QL/icons8_Delete_200px_1.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <JFXButton fx:id="btnThoat" focusTraversable="false" layoutX="1085.0" layoutY="172.0" onMouseClicked="#boTimKiem" prefHeight="50.0" prefWidth="53.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="37.0" onMouseClicked="#boTimKiem" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/TN/icons8_Close_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ListView fx:id="lvNcc" layoutX="734.0" layoutY="312.0" onMouseClicked="#chonNcc" prefHeight="200.0" prefWidth="230.0" visible="false">
+         <effect>
+            <DropShadow />
+         </effect></ListView>
+      <JFXToggleButton fx:id="tbNcc" disable="true" focusTraversable="false" layoutX="928.0" layoutY="241.0" onMouseClicked="#clickOnNccMoi" prefHeight="0.0" prefWidth="0.0" text=" ">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </JFXToggleButton>
+      <Label fx:id="lbNcc" disable="true" layoutX="847.0" layoutY="260.0" text="Nhà cung cấp mới">
+         <font>
+            <Font name="Cambria Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

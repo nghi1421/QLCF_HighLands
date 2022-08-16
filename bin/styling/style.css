@@ -1,0 +1,42 @@
+
+.button{
+	-fx-background-color : #4B5961;
+	-fx-text-fill: #ffffff;
+}
+.button:hover{
+	-fx-background-color : #879095;
+	-fx-border-radius: 3em;
+	-fx-background-radius: 3em;
+}
+.button:pressed{
+	-fx-background-color : #2D3031;
+	-fx-border-radius: 3em;
+	-fx-background-radius: 3em;
+}
+.button:focused{
+	-fx-background-color : #2D3031;
+	-fx-border-radius: 3em;
+	-fx-background-radius: 3em;
+	-fx-border-width: 0 0 0 5;
+	-fx-border-color: #fff;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
+}
+
+#btnDangNhap:hover{
+	-fx-opacity: 0.3;
+	-fx-border-radius: 2em;
+	-fx-background-radius: 2em;
+	
+}
+
+.linear-grad-to-top-right{
+    -fx-background-color: linear-gradient(to top right, #ff7f50, #6a5acd);
+}
+
+.linear-grad-to-top{
+    -fx-background-color: linear-gradient(to top, #ff7f50, #6a5acd);
+}
+

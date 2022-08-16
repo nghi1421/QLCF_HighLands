@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@../styling/NhanVien.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.QL_NhanVien_TaoTK_Controller">
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="535.0" style="-fx-background-color: #FFA200; -fx-border-color: #000; -fx-border-width: 2;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tài khoản" wrappingWidth="176.72503900527954">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <VBox spacing="2.0" style="-fx-border-radius: 10; -fx-border-color: #333; -fx-border-width: 1;">
+                     <children>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label text="Mã nhân viên: ">
+                                 <font>
+                                    <Font name="Cambria Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbmaNv" prefHeight="20.0" prefWidth="50.0" text="NV01">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label text="Họ tên: ">
+                                 <font>
+                                    <Font name="Cambria Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbHoTen" text="Nguyễn Thanh Nghị">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label text="Chức vụ: ">
+                                 <font>
+                                    <Font name="Cambria Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbChucVu" text="Quản lí">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Pane prefHeight="5.0" prefWidth="600.0" style="-fx-background-color: #000;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Pane>
+            <VBox>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2 2 0 2;">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="150.0" text="Tên đăng nhập">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="txtTenDangNhap" onKeyTyped="#kiemTraTenDangNhap" prefHeight="31.0" prefWidth="271.0" promptText="Tên đăng nhập" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fx:id="imgTBTenDangNhap" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 0 2;">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="175.0" text="Mật khẩu ">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <PasswordField fx:id="txtMatKhau" onKeyTyped="#kiemTraMatKhau" prefHeight="31.0" prefWidth="246.0" promptText="Mật khẩu" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css" />
+                        <ImageView fx:id="imgTBMatKhau" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="imgTBChucVu" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 2 2;">
+                     <children>
+                        <JFXButton fx:id="btnTaoTk" onMouseClicked="#themTaiKhoan" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Tạo tài khoản" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/QL/icons8_save_60px_2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnTroVe" layoutX="20.0" layoutY="20.0" onMouseClicked="#troVe" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Trở về" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/QL/icons8_return_64px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

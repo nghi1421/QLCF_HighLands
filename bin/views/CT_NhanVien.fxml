@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="910.0" prefWidth="1600.0" styleClass="root" stylesheets="@../styling/NhanVien.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CT_NhanVienController">
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="674.0" style="-fx-background-color: #FFA200; -fx-border-color: #000; -fx-border-width: 3;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2;">
+               <children>
+                  <Text fill="#00306a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhân viên" wrappingWidth="532.7250542640686">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="48.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Pane prefHeight="3.0" prefWidth="600.0" style="-fx-background-color: #000;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Pane>
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 2 2 0 2;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="110.0" text="Mã nhân viên:">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txtManv" prefHeight="32.0" prefWidth="142.0" text="Mã nhân viên tự sinh">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="26.0" prefWidth="99.0" text="Họ và tên:">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtHoten" focusTraversable="false" onKeyTyped="#kiemTraHoTen" prefHeight="31.0" prefWidth="253.0" promptText="Họ và tên" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="imgTBHoTen" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="106.0" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 0 2;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="58.0" text="CCCD:">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCCCD" focusTraversable="false" onKeyTyped="#kiemTraCCCD" prefHeight="31.0" prefWidth="132.0" promptText="Căn cước" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="imgTBCCCD" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="26.0" prefWidth="51.0" text="SĐT: ">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtSDT" focusTraversable="false" onKeyTyped="#kiemTraSDT" prefHeight="30.0" prefWidth="142.0" promptText="Số điện thoại" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="imgTBSDT" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label layoutX="204.0" layoutY="20.0" prefHeight="26.0" prefWidth="87.0" text="Chức vụ">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbbChucvu" focusTraversable="false" onAction="#chonChucVu" prefHeight="34.0" prefWidth="134.0" promptText="Chọn chức vụ" style="-fx-background-color: #fff; -fx-border-color: #00306A;" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css" />
+                  <ImageView fx:id="imgTBChucVu" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="152.0" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 0 2;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="72.0" text="Ngày sinh">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNgaysinh" focusTraversable="false" onKeyTyped="#kiemTraNgaySinh" prefHeight="36.0" prefWidth="172.0" promptText="dd/mm/yyyy" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="imgTBNgaySinh" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <HBox fx:id="tbChucVu" alignment="CENTER" prefHeight="46.0" prefWidth="238.0" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="102.0" text="Giới tính: ">
+                           <font>
+                              <Font name="Cambria Bold" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </Label>
+                        <JFXRadioButton fx:id="rdNam" focusTraversable="false" onMouseClicked="#tatCSSNam" prefHeight="22.0" prefWidth="66.0" text="Nam">
+                           <font>
+                              <Font name="Cambria Bold" size="16.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="gioiTinhNV" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rdNu" focusTraversable="false" onMouseClicked="#tatCSSNu" prefHeight="22.0" prefWidth="60.0" text="Nữ" toggleGroup="$gioiTinhNV">
+                           <font>
+                              <Font name="Cambria Bold" size="16.0" />
+                           </font>
+                        </JFXRadioButton>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="152.0" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 0 2;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="64.0" text="Địa chỉ:">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtDiachi" focusTraversable="false" prefHeight="30.0" prefWidth="224.0" promptText="Địa chỉ" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="imgTBDiaChi" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../image/QL/icons8_ok_48px.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="26.0" prefWidth="82.0" text="Lương: ">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtLuong" focusTraversable="false" onKeyTyped="#formatTien" prefHeight="30.0" prefWidth="142.0" promptText="Lương tháng" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="26.0" prefWidth="46.0" text="VND">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fx:id="imgTBLuong" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="245.0" prefHeight="46.0" prefWidth="600.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 0 2;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="110.0" text="Ngày vào làm:">
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNgayvaolam" focusTraversable="false" onKeyTyped="#kiemTraNgayVaoLam" prefHeight="35.0" prefWidth="178.0" promptText="dd/mm/yyyy" styleClass="jfx-text-field" stylesheets="@../styling/nhanvienCSS.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="imgTBNgayVaoLam" fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <JFXCheckBox fx:id="cbNghi" focusTraversable="false" text="Đã nghỉ việc">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Cambria Bold" size="16.0" />
+                     </font>
+                  </JFXCheckBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #fff; -fx-border-color: #000; -fx-border-width: 0 2 2 2;">
+               <children>
+                  <JFXButton fx:id="btnLuu" focusTraversable="false" onMouseClicked="#clickLuuNV_CT_NhanVien" prefHeight="58.0" prefWidth="219.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Lưu thông tin" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/QL/icons8_save_60px_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnTrove" focusTraversable="false" layoutX="20.0" layoutY="20.0" onMouseClicked="#clickTroVe_CT_NhanVien" prefHeight="58.0" prefWidth="180.0" style="-fx-background-color: #00306A;" styleClass="table" stylesheets="@../styling/styleForModelView.css" text="Trở về" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/QL/icons8_return_64px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

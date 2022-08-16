@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.Order_HoaDon_Controller">
+   <center>
+      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="701.0">
+         <children>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1690.0" style="-fx-background-color: white; -fx-border-color: #000; -fx-border-width: 2;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="460.0" text="Highlands coffe">
+                     <font>
+                        <Font name="Papyrus" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="460.0" text="Dia chi: 97 Man Thien, phuong Hiep Phu, thanh pho Thu Duc" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Papyrus" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="10.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="10.0" layoutY="64.0" prefHeight="25.0" prefWidth="460.0" text=" thanh pho Ho Chi Minh" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Papyrus" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="-10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="6.0" prefWidth="460.0" text="So dien thoai: 0888888888" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Papyrus" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="-10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="460.0" text="Orders">
+                     <font>
+                        <Font name="Papyrus" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label prefHeight="6.0" prefWidth="460.0">
+                     <VBox.margin>
+                        <Insets top="-10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="28.0" prefWidth="460.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="89.0" text="Ma orders:" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Papyrus" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="txtMaOrders" alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="123.0" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Papyrus" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="txtThoiGian" alignment="TOP_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="245.0" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Papyrus" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="-5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label prefHeight="18.0" prefWidth="502.0" text="_____________________________________________________________________________________________________">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tbDoUong" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-font-family: papyrus;" stylesheets="@../styling/HoaDon_Orders.css">
+                    <columns>
+                      <TableColumn fx:id="cTenDoUong" editable="false" prefWidth="243.1999568939209" resizable="false" text="Ten do uong" />
+                      <TableColumn fx:id="cSoLuong" editable="false" prefWidth="70.39996337890625" resizable="false" text="So luong" />
+                        <TableColumn fx:id="cDonGia" editable="false" prefWidth="104.7999267578125" resizable="false" text="Don gia" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="502.0" text="________________________">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="42.0" prefWidth="1110.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="262.0" text="Tong tien" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Papyrus" size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lbtongTien" alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="209.0" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font name="Papyrus" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" right="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="18.0" prefWidth="502.0" text="_____________________________________________________________________________________________________">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="578.0" prefHeight="25.0" prefWidth="460.0" text="Han hanh duoc phuc vu quy khach" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Papyrus" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="460.0" text="Chuc quy khach ngon mieng" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Papyrus" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="-10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="460.0" text="Hotline: 000000000" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Papyrus" size="11.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <JFXButton onMouseClicked="#inOrders" prefHeight="47.0" prefWidth="204.0" style="-fx-background-color: #333; -fx-border-color: #444;" text="IN ORDERS" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/QL/icons8_print_240px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
